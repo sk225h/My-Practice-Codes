@@ -1,0 +1,37 @@
+#include<iostream>
+#include <stdlib.h>
+using namespace std;
+
+class car{
+    
+    int no;
+    int speed;
+    string color;
+    
+    public:
+    car(int n,int s,string c){
+        no=n;
+        speed=s;
+        color=c;
+    }
+    
+    car(car &h){
+        no=h.no;
+        speed=h.speed;
+        color=h.color;
+    }
+    void print(){
+        cout<<no<<" "<<speed<<" "<<color<<endl;
+    }
+};
+
+int main(){
+    
+    car c(123,40,"Red");
+    
+    c.print(); // Param constructor
+    
+    car red(c);
+    red.print();
+    return 0;
+}
