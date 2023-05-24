@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+
+class base{
+   public:
+     base(){
+        cout<<"Base class default called"<<endl;
+        
+    }
+    base(int x){
+        cout<<"I am from param base"<<endl;
+    }
+};
+class derived:public base{
+    public: 
+     derived(){
+         cout<<"Derived calss default called"<<endl;
+     }
+    //  derived(int x){
+    //      cout<<"I am from parm of derived "<<endl;  // With this base class default is called and
+    //                                   // derived class param is called
+    //  }
+     derived(int x):base(x){ //23
+         cout<<"I am from parm of derived "<<endl;//Here the base class param is called and 
+          // derived class param is called 
+     }
+};
+int main(){
+    
+    //derived d;// Base calss default constructor is called first
+    derived d1(10); // Base calss defaul const is called with derived calss param const
+    return 0;
+}
+
+//to call the base class param we need to call the base class with derived class function has done in line 23
