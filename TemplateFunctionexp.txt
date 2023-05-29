@@ -1,0 +1,30 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+template <typename T>
+void swapnumbers(T& a, T& b){
+    T temp;
+    temp =a;
+    a=b;
+    b=temp;
+    
+    cout<<a<<" "<<b<<endl;
+}
+
+
+
+int main()
+{
+   // cout<<"Hello World";
+   
+   int  x=20,y=30;
+   float c=22.1, d=13.1;
+    
+    swapnumbers (x,y);
+    swapnumbers (c,d);
+
+    return 0;
+}
