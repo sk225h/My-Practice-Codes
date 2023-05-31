@@ -1,0 +1,77 @@
+#include <iostream>
+using namespace std;
+
+class Node{
+    public:
+    int  data;
+    Node *next;
+    
+    Node(){
+        data=0;
+        next=NULL;
+    }
+    
+    Node (int data){
+        this->data = data;
+        this->next=NULL;
+    }
+};
+
+class Linkedlist{
+    
+    Node *head;
+    public:
+    Linkedlist(){ head=NULL;}
+    
+    void insertnode(int data);
+    void printnode();
+    void deletnode();
+    
+};
+
+void Linkedlist :: insertnode(int data){
+    
+    Node* newNode = new Node(data);
+    //Node* it is pointer of type class Node
+    //Node(data) is constructor call of Node with parameter 
+    //new allocates the memory of type node and returns the pointer
+    
+    
+    //if linked lsit is empty the new node is created
+    if(head==NULL){
+        head=newNode;
+        return;
+    }
+    //temp is to traverse till end;so initilaized to head and travesed till NULL
+    Node* temp =head;
+    while(temp->next !=NULL){
+        temp= temp->next;
+    }
+    
+    temp->next = newNode;
+}
+
+
+void Linkedlist:: printnode(){
+    
+    Node* temp=head;
+    if(head==NULL){
+        cout<<"Linked list is empty"<<endl;
+        return;
+    }
+    
+    while(temp!=NULL){
+        cout<<temp->data<<" ";
+        temp = temp->next;
+    }
+}
+int main(){
+    
+    Linkedlist list;
+    
+    list.insertnode(3);
+    list.insertnode(5);
+    list.insertnode(9);
+    list.printnode();
+    return 0;
+}
