@@ -25,7 +25,7 @@ class Linkedlist{
     
     void insertnode(int data);
     void printnode();
-    void deletnode();
+    void deletnode(int pos);
     
 };
 
