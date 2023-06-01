@@ -26,7 +26,8 @@ class Linkedlist{
     void insertnode(int data);
     void printnode();
     void deletnode(int pos);
-    
+    void insertnodeAtend(int data);
+    void insertAtbeginig(int data);
 };
 
 void Linkedlist :: insertnode(int data){
@@ -101,17 +102,57 @@ void Linkedlist :: deletnode(int pos){
     pre->next = cur->next;
     delete cur;
 }
+
+void Linkedlist::insertnodeAtend(int data){
+    Node *newNode = new Node(data);
+    Node *temp;
+    if(head == NULL){
+        head = newNode;
+        return ;
+    }
+    temp =head;
+    while(temp->next!=NULL){
+        temp = temp->next;
+    }
+    temp->next = newNode;
+}
+
+
+void Linkedlist :: insertAtbeginig(int data){
+    Node *newNode = new Node(data);
+  //   Node* temp;
+    if(head==NULL){
+      
+       head = newNode;
+       return;
+    }
+    if(head!=NULL){
+        newNode->next=head;
+        head=newNode;
+    }
+    
+}
 int main(){
     
     Linkedlist list;
     
-    list.insertnode(3);
-    list.insertnode(5);
-    list.insertnode(9);
-    list.insertnode(4);
+  //  list.insertnode(3);
+  //  list.insertnode(5);
+  //  list.insertnode(9);
+    // list.insertnode(4);
+    // list.printnode();
+    // list.deletnode(4);
+    // cout<<" "<<endl;
+    // list.printnode();
+    // cout<<" "<<endl;
+    // list.insertnodeAtend(1);
+    // list.printnode();
+    // cout<<endl;
+    // list.insertAtbeginig(7);
+    // list.printnode();
+    list.insertAtbeginig(9);
+    list.insertAtbeginig(7);
+    list.insertAtbeginig(5);
     list.printnode();
-    list.deletenode(1);
-    list.deletenode(2);
-    list.print();
     return 0;
 }
