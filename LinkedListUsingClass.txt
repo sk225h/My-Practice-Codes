@@ -65,6 +65,42 @@ void Linkedlist:: printnode(){
         temp = temp->next;
     }
 }
+
+void Linkedlist :: deletnode(int pos){
+    Node *pre,*cur;
+    int len;
+    
+    if(head==NULL){
+        cout<<"Linkedlist is empty"<<endl;
+        return;
+    }
+    cur=head;
+    
+    while(cur->next!=NULL){
+        cur=cur->next;
+        len++;
+    }
+    
+    if(pos>len){
+        cout<<"Index out of bound"<<endl;
+        return;
+    }
+    cur=head;
+    if(pos==1){
+        head =head->next;
+        delete cur;
+        return;
+        
+    }
+    
+    while(pos-- >1){
+        pre = cur;
+        cur = cur->next;
+    }
+    
+    pre->next = cur->next;
+    delete cur;
+}
 int main(){
     
     Linkedlist list;
@@ -72,6 +108,10 @@ int main(){
     list.insertnode(3);
     list.insertnode(5);
     list.insertnode(9);
+    list.insertnode(4);
     list.printnode();
+    list.deletenode(1);
+    list.deletenode(2);
+    list.print();
     return 0;
 }
