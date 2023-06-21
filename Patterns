@@ -1,0 +1,80 @@
+
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		//System.out.println("Hello World");
+		
+		
+		
+		Scanner sc  = new Scanner(System.in);
+		
+		//System.out.println((char)67);
+
+		int n = sc.nextInt();
+       
+	    //int i=1;
+// 		while(i<=n){
+
+//           int j=1;
+// 		   while(j<=n){
+// 			    System.out.print(n);
+// 				j++;
+// 		   }			  
+// 		      System.out.println();
+// 			  i++;
+// 		}
+		
+// 		int val= 65;
+
+ //        int i =1;
+// 		while(i<=n){
+// 			int j=1;
+// 			while(j<=i){
+
+// 				System.out.print((char)val);
+// 				j++;
+// 			}
+// 			val++;
+// 			System.out.println();
+// 			i++;
+
+// 		}
+		
+		
+		
+// 		while(i<=n){
+// 			int j=1;
+// 			int p =i;
+// 			while(j<=i){
+// 				System.out.print(p);
+// 				p--;
+// 				j++;
+// 			}
+// 			System.out.println();
+// 			i++;
+// 		}
+		
+		
+		int val =65;
+        
+		int i =1;
+		while(i<=n){
+			int j=1;
+		//	int val = (char)('A'+j-1);
+		   // int val = 65;
+		   int p =val+n-1;
+			while(j<=i){
+                 System.out.print((char)p);
+				  j++;
+				  p--;
+			}
+			
+			System.out.println();
+            val=val+1;
+		   i++;
+		   
+		}
+	}
+}
