@@ -1,0 +1,64 @@
+#include <iostream>
+using namespace std;
+
+#define n 5
+int queue[n];
+int front = -1;
+int rear = -1;
+
+void enqueue(int val){
+    
+    if(rear == n-1){
+        cout<<"Queue is full  machha "<<endl;
+        
+    }
+    else if(front == -1 && rear ) {
+        front = rear = 0;
+        
+        queue[rear] = val;
+            
+    }
+    else {
+        rear ++;
+        queue[rear] = val;
+    }
+}
+
+int deque()
+{
+    if(front== -1 && rear== -1){
+         cout<<"Guru deque is empty"<<endl;
+    
+    }
+    else if(front == rear){
+        front = rear =-1;
+    }
+    else {
+        int ret = queue[front];
+        front++;
+        return ret;
+    }
+}
+
+void display(){
+    
+    if(rear == -1 and front == -1){
+        cout<<"Boss queue is empty"<<endl;
+    }else {
+        for(int i=front;i<=rear;i++){
+            cout<<"I am from queue ["<<i<<"] : "<< queue[i]<<endl;
+        }
+    }
+}
+int main()
+{
+    enqueue(9);
+    enqueue(8);
+    enqueue(7);
+    display();
+    cout<<deque();
+    deque();
+    deque();
+    display();
+    return 0;
+}

@@ -1,0 +1,111 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+
+int max_val=10;
+int stack[100];
+
+int top=-1;
+
+void isempty(){
+    if(top== -1){
+        cout<<"Stack is empty"<<endl;
+        exit(0);
+    }
+}
+void isfull(){
+    if(top==max_val-1){
+    cout<<"Stack is full"<<endl;
+    exit(0);
+    }
+}
+
+void push(){
+    int val;
+    cout<<"Enter the value to push in to stack"<<endl;
+    cin>>val;
+    if(top== max_val-1){
+        isfull();
+    }
+    else {
+        top++;
+        stack[top]= val;
+        
+    }
+    
+}
+
+int pop(){
+    int ret ;
+    if(top==-1){
+        isempty();
+    }
+    else{
+        
+        ret = stack[top];
+        top --;
+        return ret;
+    }
+    
+}
+
+void display(){
+    
+    if(top== -1){
+        isempty();
+    }
+    else {
+        for(int i =top;i>=0;i--){
+            cout<<stack[i]<<" ";
+        }
+    }
+}
+
+
+int main()
+{
+    
+    
+    
+    cout<<"enter the stack size"<<endl;
+    cin>>max_val;
+    
+    
+    int ch;
+    
+     
+    cout<<"Stack Operations"<<endl;
+    
+    
+    
+    do{
+        
+        cout<<"Press 1 to Push element \nPress 2 to pop the element \nPress 3 to display Stack"<<endl;
+        
+        cin>>ch;
+        
+        switch(ch){
+        case 1:
+        push();
+        break;
+        case 2 :
+        pop();
+        break;
+        case 3:
+        display();
+        break;
+        case 4:
+        cout<<"Exit"<<endl;
+        break;
+        default:
+        cout<<"enter correct choice"<<endl;
+        exit(0);
+    }
+    }while(ch!=4);
+    
+
+    return 0;
+}
